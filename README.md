@@ -17,68 +17,21 @@ This extension is designed for an educational toll gate model used in technology
 ## Example 
 
 ```typescript
-
-## A4 Gate 
-
-MakeCode extension for the **A4 sliding gate model** based on the **DFR1216 expansion board**, **BBC micro:bit**, and various modules connected to the expansion board.
-
-## Product page and teaching resources 
-
-Product information and educational resources are available on https://www.a4.fr/wiki/index.php?title=Portail_coulissant_(BE-APORT-COUL) 
-
-Website: a4.fr
-
-Product sheet: 
-
-## Purpose 
-
-This extension is designed for an educational sliding gate model used in technology lessons. 
-
-It provides simple blocks to: 
-* detect obstacle presence with IR and PIR sensors
-* read pushed buttons and limit switches modules' states
-* turn on/off the IR emitter and LED 
-* control the gate's opening and closing
-* measure current/voltage using a wattmeter 
-
-### Hardware required 
-* BBC micro:bit 
-* DFR1216 expansion board
-* modules connected to the pins (see product information for wiring diagram)
-
-## API overview 
-
-* `Obstacle detected by IR`
-* `Opening/Closing limit switch on`
-* `Outside/Inside button pressed`
-* `Turn on/off IR emitter`
-* `Turn on/off light`
-* `Open/Close gate`
-* `Motion detected by PIR sensor`
-* `Current/Voltage measurement`
-* `Display all modules states`
-
-## Example 
-
-```typescript
-function open () {
-    while (!(a4_Gate.sensorState(LimitSwitch.Opening))) {
-        a4_Gate.gate(Gate.CW)
-    }
-    a4_Gate.gate(Gate.Stop)
-}
-function close () {
-    while (!(a4_Gate.sensorState(LimitSwitch.Closing))) {
-        a4_Gate.gate(Gate.CCW)
-    }
-    a4_Gate.gate(Gate.Stop)
-}
+a4_microSySTEM_Barrier.initRFID()
+a4_microSySTEM_Barrier.setServoAngle(5)
 basic.forever(function () {
-    if (a4_Gate.buttonStateBoolean(ButtonLocation.Ext) || a4_Gate.buttonStateBoolean(ButtonLocation.Int)) {
-        open()
-        basic.pause(3000)
-        close()
+    while (a4_microSySTEM_Barrier.readID() != 9434499) {
+        a4_microSySTEM_Barrier.setRingColor(a4_microSySTEM_Barrier.Colors.Red)
     }
+    a4_microSySTEM_Barrier.setRingColor(a4_microSySTEM_Barrier.Colors.Green)
+    a4_microSySTEM_Barrier.setServoAngle(90)
+    while (!(a4_microSySTEM_Barrier.presenceSensor())) {
+    	
+    }
+    while (a4_microSySTEM_Barrier.presenceSensor()) {
+        a4_microSySTEM_Barrier.setRingColor(a4_microSySTEM_Barrier.Colors.Red)
+    }
+    a4_microSySTEM_Barrier.setServoAngle(5)
 })
 ````
 
