@@ -11,8 +11,8 @@
         "main.ts",
         "README.md",
         "custom.ts",
-	"a4-mis-bar-k01/_locales/fr/a4-MIS-BAR-K01-strings.json",
-	"a4-mis-bar-k01/_locales/fr/a4-MIS-BAR-K01-jsdoc-strings.json"
+		"a4-mis-bar-k01/_locales/fr/a4-MIS-BAR-K01-strings.json",
+		"a4-mis-bar-k01/_locales/fr/a4-MIS-BAR-K01-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
