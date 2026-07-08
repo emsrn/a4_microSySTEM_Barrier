@@ -1,24 +1,88 @@
+## A4 microSySTEM-Barrier
 
-> Ouvrir cette page à [https://emsrn.github.io/a4-mis-bar-k01/](https://emsrn.github.io/a4-mis-bar-k01/)
+MakeCode extension for the **A4 toll gate model** based on the **DFR1216 expansion board**, **BBC micro:bit**, and various modules connected to the expansion board.
 
-## Utiliser comme extension
+## Product page and teaching resources 
 
-Ce dépôt peut être ajouté en tant qu'**extension** dans MakeCode.
+Product information and educational resources are available on 
 
-* ouvrir [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* cliquez sur **Nouveau projet**
-* cliquez sur **Extensions** dans le menu engrenage
-* recherchez **https://github.com/emsrn/a4-mis-bar-k01** et importez
+Website: a4.fr
 
-## Éditer ce projet
+Product sheet: 
 
-Éditer ce dépôt dans MakeCode.
+## Purpose 
 
-* ouvrir [https://makecode.microbit.org/](https://makecode.microbit.org/)
-* cliquez sur **Importer** puis cliquez sur **Importer l'URL **
-* collez **https://github.com/emsrn/a4-mis-bar-k01** et cliquez sur importer
+This extension is designed for an educational toll gate model used in technology lessons. 
 
-#### Métadonnées (utilisées pour la recherche, le rendu)
+## Example 
 
-* for PXT/microbit
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+```typescript
+
+## A4 Gate 
+
+MakeCode extension for the **A4 sliding gate model** based on the **DFR1216 expansion board**, **BBC micro:bit**, and various modules connected to the expansion board.
+
+## Product page and teaching resources 
+
+Product information and educational resources are available on https://www.a4.fr/wiki/index.php?title=Portail_coulissant_(BE-APORT-COUL) 
+
+Website: a4.fr
+
+Product sheet: 
+
+## Purpose 
+
+This extension is designed for an educational sliding gate model used in technology lessons. 
+
+It provides simple blocks to: 
+* detect obstacle presence with IR and PIR sensors
+* read pushed buttons and limit switches modules' states
+* turn on/off the IR emitter and LED 
+* control the gate's opening and closing
+* measure current/voltage using a wattmeter 
+
+### Hardware required 
+* BBC micro:bit 
+* DFR1216 expansion board
+* modules connected to the pins (see product information for wiring diagram)
+
+## API overview 
+
+* `Obstacle detected by IR`
+* `Opening/Closing limit switch on`
+* `Outside/Inside button pressed`
+* `Turn on/off IR emitter`
+* `Turn on/off light`
+* `Open/Close gate`
+* `Motion detected by PIR sensor`
+* `Current/Voltage measurement`
+* `Display all modules states`
+
+## Example 
+
+```typescript
+function open () {
+    while (!(a4_Gate.sensorState(LimitSwitch.Opening))) {
+        a4_Gate.gate(Gate.CW)
+    }
+    a4_Gate.gate(Gate.Stop)
+}
+function close () {
+    while (!(a4_Gate.sensorState(LimitSwitch.Closing))) {
+        a4_Gate.gate(Gate.CCW)
+    }
+    a4_Gate.gate(Gate.Stop)
+}
+basic.forever(function () {
+    if (a4_Gate.buttonStateBoolean(ButtonLocation.Ext) || a4_Gate.buttonStateBoolean(ButtonLocation.Int)) {
+        open()
+        basic.pause(3000)
+        close()
+    }
+})
+````
+
+## License 
+````
+
+## License 
