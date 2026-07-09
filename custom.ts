@@ -49,13 +49,10 @@ namespace a4_microSySTEM_Barrier {
         return hexOnly.substr(start, 12)
     }
 
-    /**
-     * Initialize RFID module 
-     */
-    //% block="initialize RFID"
-    export function initRFID(): void {
-        let rx=SerialPin.P14
-        let tx=SerialPin.P15
+
+    function initRFID(): void {
+        let rx = SerialPin.P14
+        let tx = SerialPin.P15
         serial.redirect(tx, rx, BaudRate.BaudRate9600)
         serial.setRxBufferSize(64)
         buffer = ""
@@ -67,6 +64,7 @@ namespace a4_microSySTEM_Barrier {
      */
     //% block="read RFID tag"
     export function readID(): number {
+        initRFID()
         buffer += serial.readString()
 
         let frame = extractLastValidFrame(buffer)
@@ -213,7 +211,7 @@ namespace a4_microSySTEM_Barrier {
     export function setServoAngle(angle: number) {
         initDFR()
 
-        let s=Servo.S0
+        let s = Servo.S0
 
         angle = Math.clamp(0, 180, angle)
         let period = 500 + angle * 11
@@ -223,6 +221,20 @@ namespace a4_microSySTEM_Barrier {
         buf[1] = period & 0xFF
 
         writeReg(0x18 + s * 2, buf)
+    }
+
+    export enum Action {
+        open,
+        close
+    }
+    //%block="%action barrier"
+    export function barrier(action: Action){
+        if (action == Action.open){
+            setServoAngle(95)
+        }
+        else if (action == Action.close){
+            setServoAngle(5)
+        }
     }
 
     enum IO {
