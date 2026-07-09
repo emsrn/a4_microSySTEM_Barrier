@@ -11,6 +11,7 @@
   "a4_microSySTEM_Barrier.rgb|block": "aller le feu en rouge %red|vert %green|bleu %blue",
   "a4_microSySTEM_Barrier.setRingColor|block": "allumer feu en %color",
   "a4_microSySTEM_Barrier.setServoAngle|block": "fixer angle servomoteur à %angle",
+  "a4_microSySTEM_Barrier.barrier|block": "%action barrière",
   "a4_microSySTEM_Barrier|block": "a4_microSySTEM_Barrier",
   "{id:category}A4_microSySTEM_Barrier": "A4_microSySTEM_Barrier"
 }
