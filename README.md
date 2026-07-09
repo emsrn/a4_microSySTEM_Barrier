@@ -17,7 +17,6 @@ This extension is designed for an educational toll gate model used in technology
 ## Example 
 
 ```typescript
-a4_microSySTEM_Barrier.initRFID()
 a4_microSySTEM_Barrier.setServoAngle(5)
 basic.forever(function () {
     while (a4_microSySTEM_Barrier.readID() != 9434499) {
