@@ -12,8 +12,8 @@
   "a4_microSySTEM_Barrier.setRingColor|block": "allumer feu en %color",
   "a4_microSySTEM_Barrier.setServoAngle|block": "fixer angle servomoteur à %angle",
   "a4_microSySTEM_Barrier.barrier|block": "%action barrière",
-  "Action.open|block": "ouvrir",
-  "Action.close|block": "fermer",
+  "a4_microSySTEM_Barrier.Action.open|block": "ouvrir",
+  "a4_microSySTEM_Barrier.Action.close|block": "fermer",
   "a4_microSySTEM_Barrier|block": "a4_microSySTEM_Barrier",
   "{id:category}A4_microSySTEM_Barrier": "A4_microSySTEM_Barrier"
 }
