@@ -224,7 +224,9 @@ namespace a4_microSySTEM_Barrier {
     }
 
     export enum Action {
+        //%block=open
         open,
+        //%block=close
         close
     }
     
