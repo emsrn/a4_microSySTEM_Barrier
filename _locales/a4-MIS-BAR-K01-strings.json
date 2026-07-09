@@ -12,6 +12,8 @@
   "a4_microSySTEM_Barrier.setRingColor|block": "light on in %color",
   "a4_microSySTEM_Barrier.setServoAngle|block": "set servo angle %angle",
   "a4_microSySTEM_Barrier.barrier|block": "%action barrier",
+  "Action.open|block": "open",
+  "Action.close|block": "close",
   "a4_microSySTEM_Barrier|block": "a4_microSySTEM_Barrier",
   "{id:category}A4_microSySTEM_Barrier": "A4_microSySTEM_Barrier"
 }
