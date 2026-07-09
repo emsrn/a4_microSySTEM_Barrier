@@ -1,4 +1,3 @@
-a4_microSySTEM_Barrier.initRFID()
 a4_microSySTEM_Barrier.setServoAngle(5)
 basic.forever(function () {
     while (a4_microSySTEM_Barrier.readID() != 9434499) {
