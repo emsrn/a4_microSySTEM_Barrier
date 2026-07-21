@@ -1,5 +1,5 @@
 {
-    "name": "a4-MIS-BAR-K01",
+    "name": "a4_microSySTEM_Barrier",
     "description": "",
     "dependencies": {
         "core": "*",
