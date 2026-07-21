@@ -1,3 +1,4 @@
+//%block="A4 microSySTEM Barrier"
 //% weight=100 color=#F29C00 icon="\uf2db"
 namespace a4_microSySTEM_Barrier {
     let buffer = ""
@@ -40,9 +41,6 @@ namespace a4_microSySTEM_Barrier {
             }
         }
 
-        // Une trame utile observée = 12 caractères hex :
-        // 2 d'entête + 8 d'identifiant + 2 de fin/checksum
-        // Si plusieurs trames sont collées, on prend la dernière.
         if (hexOnly.length < 12) return ""
 
         let start = hexOnly.length - 12
@@ -69,19 +67,13 @@ namespace a4_microSySTEM_Barrier {
 
         let frame = extractLastValidFrame(buffer)
 
-        // On évite que le buffer grossisse trop
         if (buffer.length > 64) {
             buffer = buffer.substr(buffer.length - 64, 64)
         }
 
         if (frame.length == 12) {
-            // Format observé :
-            // [0..1]   = entête
-            // [2..9]   = ID badge en hex
-            // [10..11] = checksum / fin
             let idHex = frame.substr(2, 8)
 
-            // On vide le buffer après lecture valide
             buffer = ""
 
             return hexToDec(idHex)
@@ -111,7 +103,7 @@ namespace a4_microSySTEM_Barrier {
         constructor(numleds: number, pin: DigitalPin) {
             this._length = numleds;
             this.pin = pin;
-            this.buf = pins.createBuffer(numleds * 3); // RGB simple
+            this.buf = pins.createBuffer(numleds * 3); 
         }
 
         showColor(rgb: number) {
@@ -119,7 +111,6 @@ namespace a4_microSySTEM_Barrier {
             let g = (rgb >> 8) & 0xFF;
             let b = rgb & 0xFF;
 
-            // luminosité 
             let scale = 255 / 255;
 
             for (let i = 0; i < this._length; i++) {
@@ -128,7 +119,6 @@ namespace a4_microSySTEM_Barrier {
                 this.buf[i * 3 + 2] = Math.floor(b * scale);
             }
 
-            // Utilisation de la fonction native de la micro:bit sans l'extension Neopixel "ws2812b.sendBuffer(this.buf, this.pin);"
             light.sendWS2812Buffer(this.buf, this.pin);
         }
 
