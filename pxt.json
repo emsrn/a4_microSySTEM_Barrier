@@ -1,5 +1,5 @@
 {
-    "name": "a4_microSySTEM_Barrier",
+    "name": "a4-microSySTEM-Barrier",
     "description": "",
     "dependencies": {
         "core": "*",
@@ -11,10 +11,10 @@
         "main.ts",
         "README.md",
         "custom.ts",
-		"_locales/a4_microSySTEM_Barrier-strings.json",
-		"_locales/a4_microSySTEM_Barrier-jsdoc-strings.json",
-		"_locales/fr/a4_microSySTEM_Barrier-strings.json",
-		"_locales/fr/a4_microSySTEM_Barrier-jsdoc-strings.json"
+		"_locales/a4-microSySTEM-Barrier-strings.json",
+		"_locales/a4-microSySTEM-Barrier-jsdoc-strings.json",
+		"_locales/fr/a4-microSySTEM-Barrier-strings.json",
+		"_locales/fr/a4-microSySTEM-Barrier-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
