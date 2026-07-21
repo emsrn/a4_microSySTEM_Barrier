@@ -11,10 +11,10 @@
         "main.ts",
         "README.md",
         "custom.ts",
-		"_locales/a4-MIS-BAR-K01-strings.json",
-		"_locales/a4-MIS-BAR-K01-jsdoc-strings.json",
-		"_locales/fr/a4-MIS-BAR-K01-strings.json",
-		"_locales/fr/a4-MIS-BAR-K01-jsdoc-strings.json"
+		"_locales/a4_microSySTEM_Barrier-strings.json",
+		"_locales/a4_microSySTEM_Barrier-jsdoc-strings.json",
+		"_locales/fr/a4_microSySTEM_Barrier-strings.json",
+		"_locales/fr/a4_microSySTEM_Barrier-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
