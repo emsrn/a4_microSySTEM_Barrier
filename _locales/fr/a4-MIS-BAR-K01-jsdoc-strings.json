@@ -9,8 +9,8 @@
   "a4_microSySTEM_Barrier.rgb|param|red": "Valeur du cannel rouge entre 0 et 255. eg: 255",
   "a4_microSySTEM_Barrier.setRingColor": "Allume la LED dans la couleur choisie",
   "a4_microSySTEM_Barrier.setRingColor|param|color": "Couleur pour la LED",
-  "a4_microSySTEM_Barrier.barrier": "Ouvre ou ferme la barrière en fixant l'angle du servo à 5° ou 95°",
-  "a4_microSySTEM_Barrier.barrier|param|action": "Ouvrir=angle servo à 95° et fermer=angle servo à 5°",
+  "a4_microSySTEM_Barrier.barrier": "Ouvre ou ferme la barrière en fixant l'angle du servo à 5° ou 115°",
+  "a4_microSySTEM_Barrier.barrier|param|action": "Ouvrir=angle servo à 115° et fermer=angle servo à 5°",
   "a4_microSySTEM_Barrier.setServoAngle": "Fixe l'angle du servomoteur qui permet de controler l'ouverture de la barrière",
   "a4_microSySTEM_Barrier.setServoAngle|param|angle": "Angle en degrés entre 0 et 180 "
 }
