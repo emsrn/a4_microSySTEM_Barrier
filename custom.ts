@@ -231,13 +231,13 @@ namespace a4_microSySTEM_Barrier {
     }
     
         /**
-     * Opens or closes the barrier setting servo angle at 5° or 95°
-     * @param action open=servo angle at 95° and close=servo angle at 5° 
+     * Opens or closes the barrier setting servo angle at 5° or 115°
+     * @param action open=servo angle at 115° and close=servo angle at 5° 
      */
     //%block="%action barrier"
     export function barrier(action: Action){
         if (action == Action.open){
-            setServoAngle(95)
+            setServoAngle(115)
         }
         else if (action == Action.close){
             setServoAngle(5)
