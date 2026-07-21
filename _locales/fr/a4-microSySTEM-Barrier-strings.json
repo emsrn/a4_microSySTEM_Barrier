@@ -15,5 +15,5 @@
   "a4-microSySTEM-Barrier.Action.open|block": "ouvrir",
   "a4-microSySTEM-Barrier.Action.close|block": "fermer",
   "a4-microSySTEM-Barrier|block": "a4 microSySTEM Barrier",
-  "{id:category}A4_microSySTEM_Barrier": "A4_microSySTEM_Barrier"
+  "{id:category}a4_microSySTEM_Barrier": "A4_microSySTEM_Barrier"
 }
