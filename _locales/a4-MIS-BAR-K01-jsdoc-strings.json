@@ -11,6 +11,6 @@
   "a4_microSySTEM_Barrier.setRingColor|param|color": "color for the led ",
   "a4_microSySTEM_Barrier.barrier": "Opens or closes the barrier setting servo angle at 5° or 95°",
   "a4_microSySTEM_Barrier.barrier|param|action": "open=servo angle at 95° and close=servo angle at 5°",
-  "a4_microSySTEM_Barrier.setServoAngle": "Sets servo angle",
+  "a4_microSySTEM_Barrier.setServoAngle": "Sets servo angle which allows to control the barrier",
   "a4_microSySTEM_Barrier.setServoAngle|param|angle": "angle in degrees between 0 and 180 "
 }
